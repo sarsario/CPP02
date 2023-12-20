@@ -6,7 +6,7 @@
 /*   By: osarsari <osarsari@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:31:51 by osarsari          #+#    #+#             */
-/*   Updated: 2023/12/20 11:51:27 by osarsari         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:23:12 by osarsari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,18 @@ int main(void)
 	Point const b(10.0f, 0.0f);
 	Point const c(0.0f, 10.0f);
 
-	Point const point1(0.0f, 0.0f);	 // Should return true
-	Point const point2(5.0f, 5.0f);	 // Should return true
+	Point const point1(0.0f, 0.0f);	 // Should return false
+	Point const point2(5.0f, 5.0f);	 // Should return false
 	Point const point3(5.0f, 6.0f);	 // Should return false
 	Point const point4(11.0f, 0.0f); // Should return false
 	Point const point5(0.0f, 11.0f); // Should return false
 	Point const point6(-1.0f, 0.0f); // Should return false
 	Point const point7(0.0f, -1.0f); // Should return false
-	Point const point8(0.0f, 0.0f);	 // Should return true
+	Point const point8(0.0f, 0.0f);	 // Should return false
+
+	Point const point9(1.0f, 1.0f);	 // Should return true
+	Point const point10(2.0f, 3.0f); // Should return true
+	Point const point11(4.9f, 4.9f); // Should return true
 
 	bool result1 = bsp(a, b, c, point1);
 	bool result2 = bsp(a, b, c, point2);
@@ -39,6 +43,9 @@ int main(void)
 	bool result6 = bsp(a, b, c, point6);
 	bool result7 = bsp(a, b, c, point7);
 	bool result8 = bsp(a, b, c, point8);
+	bool result9 = bsp(a, b, c, point9);
+	bool result10 = bsp(a, b, c, point10);
+	bool result11 = bsp(a, b, c, point11);
 
 	std::cout << "Point1: " << (result1 ? GREEN "inside" RESET : RED "outside" RESET) << std::endl;
 	std::cout << "Point2: " << (result2 ? GREEN "inside" RESET : RED "outside" RESET) << std::endl;
@@ -48,6 +55,9 @@ int main(void)
 	std::cout << "Point6: " << (result6 ? GREEN "inside" RESET : RED "outside" RESET) << std::endl;
 	std::cout << "Point7: " << (result7 ? GREEN "inside" RESET : RED "outside" RESET) << std::endl;
 	std::cout << "Point8: " << (result8 ? GREEN "inside" RESET : RED "outside" RESET) << std::endl;
+	std::cout << "Point9: " << (result9 ? GREEN "inside" RESET : RED "outside" RESET) << std::endl;
+	std::cout << "Point10: " << (result10 ? GREEN "inside" RESET : RED "outside" RESET) << std::endl;
+	std::cout << "Point11: " << (result11 ? GREEN "inside" RESET : RED "outside" RESET) << std::endl;
 
 	return (0);
 }

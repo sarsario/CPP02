@@ -6,7 +6,7 @@
 /*   By: osarsari <osarsari@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:28:51 by osarsari          #+#    #+#             */
-/*   Updated: 2023/12/20 11:31:34 by osarsari         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:20:59 by osarsari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed const a2 = ((y3 - y2) * (x - x2)) - ((x3 - x2) * (y - y2));
 	Fixed const a3 = ((y1 - y3) * (x - x3)) - ((x1 - x3) * (y - y3));
 
-	if ((a1 >= 0 && a2 >= 0 && a3 >= 0) || (a1 <= 0 && a2 <= 0 && a3 <= 0))
+	if ((a1 > 0 && a2 > 0 && a3 > 0) || (a1 < 0 && a2 < 0 && a3 < 0))
 		return (true);
 	return (false);
 }
